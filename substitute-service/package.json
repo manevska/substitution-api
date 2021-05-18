@@ -1,0 +1,33 @@
+{
+  "name": "substitute-service",
+  "version": "1.0.0",
+  "description": "Serverless webpack service for word replacement in sentence.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "jest",
+    "start": "sls offline -c serverless.local.yml start --httpPort 8127 --lambdaPort 9127",
+    "deploy": "npm install && sls deploy",
+    "test-local": "npx sls invoke local -f ReplaceWord --path mock.json"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.6",
+    "aws-sdk": "^2.739.0",
+    "substitution-api-core": "file:../core",
+    "serverless-aws-documentation": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.17",
+    "@types/jest": "^26.0.10",
+    "@types/node": "14.0.27",
+    "@types/serverless": "^1.72.5",
+    "serverless-offline": "^6.5.0",
+    "serverless-prune-plugin": "^1.4.3",
+    "serverless-webpack": "^5.3.4",
+    "ts-loader": "^5.4.5",
+    "ts-node": "^8.10.2",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "typescript": "^3.9.7",
+    "webpack": "^4.29.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

@@ -1,0 +1,30 @@
+service:
+  name: substitution-api
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-1
+  timeout: 60
+
+  environment:
+    REGION: ${self:provider.region}
+
+custom:
+  prune: # used for deleting older function versions
+    automatic: true
+    number: 1 # number of versions to keep
+  webpack:
+    includeModules: true
+
+functions:
+  ReplaceWord:
+    handler: src/handlers/SubstituteController.ReplaceWord
+    events:
+      - http:
+          method: post
+          path: /replace

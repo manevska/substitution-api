@@ -1,0 +1,19 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elena Manevska",
+  "license": "ISC",
+  "bundleDependencies": false,
+  "dependencies": {
+    "@types/node": "^14.11.1",
+    "aws-sdk": "^2.755.0"
+  },
+  "devDependencies": {
+    "aws-sdk-mock": "^5.1.0"
+  }
+}

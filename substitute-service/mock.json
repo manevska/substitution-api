@@ -1,0 +1,6 @@
+{
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"sentence\": \"Amazon Something Google saying Oracle\"}"
+}
