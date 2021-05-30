@@ -40,18 +40,22 @@ The project code base is divided in:
 │   │   └── index.ts                            # Import/export of all global services
 │   │
 │   └── substitute-service                      # Word replacement micro-service
-│       ├── constants                          
-│       │   └── ReplacableWords.ts              # Key-value pair of words and their replacements 
+│       ├── actions                          
+│       │   └── DynamoDB.ts                     # DynamoDB Manager 
 │       ├── models                              
-│       │   └── sentence.request.model.ts       # Request model
+│       │   ├── sentence.request.model.ts       # Request model for substitution
+        │   └── word.request.model.ts           # Request model for adding words 
 │       ├── services
-│       │   └── ReplaceWordService.ts           # Lambda function for the word replacement
+│       │   ├── ReplaceWordService.ts           # Lambda function for the word replacement
+│       │   └── AddWordService.ts               # Lambda function for adding new words in db
 │       └── src                                
 │           └── handlers                        # Function for the word replacement
-│               └── SubstituteController.ts     # Replace Word handler
+│               ├── SubstituteController.ts     # Replace Word handler
+│               └── SubstituteController.ts     # Add Word handler
 │
 ├── mock.json                                   # Example request for local testing
 ├── package.json
+├── provider_role_statements.yml                # AWS IAM role statements
 ├── serverless.ts                               # Serverless service file
 ├── tsconfig.json                               # Typescript compiler configuration
 └── webpack.config.js                           # Webpack configuration
