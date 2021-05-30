@@ -1,5 +1,5 @@
 import { APIGatewayProxyHandler } from "aws-lambda";
-import {ReplaceWordService} from "@services/ReplaceWordService";
+import { ReplaceWordService } from "@services/ReplaceWordService";
 import { ApiGatewayResponseService } from 'substitution-api-core/services/ApiGatewayResponse.service';
 import { SentenceRequest } from "@root/models/sentence.request.model";
 

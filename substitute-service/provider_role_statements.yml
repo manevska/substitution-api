@@ -1,0 +1,11 @@
+#DYNAMO DB
+- Effect: "Allow"
+  Action:
+    - "dynamodb:*"
+  Resource:
+    - "Fn::Join":
+        - ":"
+        - - "arn:aws:dynamodb"
+          - ${self:provider.region}
+          - ${self:provider.account}
+          - "table/substitutionTable"

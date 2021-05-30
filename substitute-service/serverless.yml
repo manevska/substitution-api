@@ -9,10 +9,14 @@ provider:
   name: aws
   runtime: nodejs12.x
   region: eu-west-1
+  account: 878067559319
   timeout: 60
 
   environment:
     REGION: ${self:provider.region}
+    DYNAMO_DB_TABLE: substitutionTable
+
+  iamRoleStatements: ${file(provider_role_statements.yml)}
 
 custom:
   prune: # used for deleting older function versions
@@ -28,3 +32,25 @@ functions:
       - http:
           method: post
           path: /replace
+  AddWord:
+    handler: src/handlers/WordsController.AddWord
+    events:
+      - http:
+          method: post
+          path: /add
+
+resources:
+  Resources:
+    substitutionTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: substitutionTable
+        AttributeDefinitions:
+          - AttributeName: word
+            AttributeType: S
+        KeySchema:
+          - AttributeName: word
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
