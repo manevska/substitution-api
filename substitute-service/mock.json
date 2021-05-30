@@ -2,5 +2,5 @@
   "headers": {
     "Content-Type": "application/json"
   },
-  "body": "{\"sentence\": \"Amazon Something Google saying Oracle\"}"
+  "body": "{\"sentence\": \"Amazon, Google and Microsoft are one of the most popular cloud service providers.\"}"
 }
