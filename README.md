@@ -77,7 +77,7 @@ The project code base is divided in:
 │       └── src                                
 │           └── handlers                        # Function for the word replacement
 │               ├── SubstituteController.ts     # Replace Word handler
-│               └── SubstituteController.ts     # Add Word handler
+│               └── WordsController.ts          # Add Word handler
 │
 ├── mock.json                                   # Example request for local testing
 ├── package.json
